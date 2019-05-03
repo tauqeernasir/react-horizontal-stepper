@@ -13,7 +13,7 @@ yarn add react-horizontal-stepper
 Then just import into your file as:
 
 ```jsx
-import Stepper from "react-horizontal-stepper";
+import { Stepper } from "react-horizontal-stepper";
 ```
 
 # Usage
