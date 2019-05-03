@@ -16,6 +16,7 @@
     "name": "Muhammad Tauqeer Nasir",
     "url": "https://twitter.com/_tauqeer_"
   },
+  "license": "MIT",
   "dependencies": {
     "styled-components": "^4.2.0"
   },
