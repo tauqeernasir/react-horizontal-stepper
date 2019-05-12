@@ -1,5 +1,7 @@
 # react-horizontal-stepper
 
+[![Build Status](https://travis-ci.org/jskod/react-horizontal-stepper.svg?branch=master)](https://travis-ci.org/jskod/react-horizontal-stepper)
+
 A very light weight and simple horizontal stepper for react apps.
 
 # Screenshot
@@ -23,6 +25,9 @@ import { Stepper } from "react-horizontal-stepper";
 # Usage
 
 ```jsx
+
+const getSteps = () => ['Step 1', 'Step 2']
+
 render() {
   return (
     <Stepper
