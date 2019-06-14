@@ -8,12 +8,14 @@ exports[`renders correctly 1`] = `
     className="sc-bdVaJa fLYOAG"
   >
     <li
-      className="sc-bwzfXH kJHFRO"
+      className="sc-bwzfXH gowOiD"
+      onClick={[Function]}
     >
       step 1
     </li>
     <li
-      className="sc-bwzfXH kxCPIG"
+      className="sc-bwzfXH hTqtit"
+      onClick={[Function]}
     >
       step 2
     </li>
