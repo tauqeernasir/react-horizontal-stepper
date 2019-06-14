@@ -15,20 +15,21 @@ const ProgressItem = styled.li`
     font-weight: 200;
     font-size: 12px;
     display: inline;
+    cursor: pointer;
     ${props => (props.textColor ? "color: " + props.textColor : "")}
     ${props =>
-      props.active
-        ? `
+    props.active
+      ? `
       ${props.activeColor && "color: " + props.activeColor}
       font-weight: bold;
     `
-        : ``}
+      : ``}
     ${props => (props.active ? `font-weight: 600;` : ``)};
   }
 
   &:before {
     ${props =>
-      props.completed ? "content: '\\2713';" : "content: counter(step);"}
+    props.completed ? "content: '\\2713';" : "content: counter(step);"}
     counter-increment: step;
     height: 30px;
     width: 30px;
@@ -70,12 +71,12 @@ const Container = styled.div`
   ${props => props.fontFamily && "font-family: " + props.fontFamily};
   ${ProgressBar} > ${ProgressItem} {
     width: ${props =>
-      props.children && `${100 / props.children.props.children.length}%`};
+    props.children && `${100 / props.children.props.children.length}%`};
   }
 `;
 
 const Stepper = props => {
-  const { steps, currentStep, fontFamily, textColor, activeColor } = props;
+  const { steps, currentStep, fontFamily, textColor, activeColor, onItemClick } = props;
 
   return (
     <Container fontFamily={fontFamily}>
@@ -89,6 +90,7 @@ const Stepper = props => {
                 completed={currentStep > index}
                 textColor={textColor}
                 activeColor={activeColor}
+                onClick={onItemClick.bind(null, index, step)}
               >
                 {step}
               </ProgressItem>

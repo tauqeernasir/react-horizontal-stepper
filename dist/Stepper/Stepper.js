@@ -11,7 +11,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  & {\n    list-style-type: none;\n    float: left;\n    position: relative;\n    text-align: center;\n    font-weight: 200;\n    font-size: 12px;\n    display: inline;\n    ", "\n    ", "\n    ", ";\n  }\n\n  &:before {\n    ", "\n    counter-increment: step;\n    height: 30px;\n    width: 30px;\n    line-height: 30px;\n    display: block;\n    text-align: center;\n    margin: 0 auto 10px auto;\n    color: rgba(0, 0, 0, 0.6);\n    border: 2px solid #ddd;\n    ", ";\n    background-color: white;\n    position: relative;\n    z-index: 1;\n  }\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    height: 2px;\n    background-color: #ddd;\n    top: 15px;\n    left: -50%;\n    z-index: 0;\n  }\n\n  &:first-child:after {\n    content: \"\";\n    background-color: transparent;\n    height: 0;\n    width: 0;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  & {\n    list-style-type: none;\n    float: left;\n    position: relative;\n    text-align: center;\n    font-weight: 200;\n    font-size: 12px;\n    display: inline;\n    cursor: pointer;\n    ", "\n    ", "\n    ", ";\n  }\n\n  &:before {\n    ", "\n    counter-increment: step;\n    height: 30px;\n    width: 30px;\n    line-height: 30px;\n    display: block;\n    text-align: center;\n    margin: 0 auto 10px auto;\n    color: rgba(0, 0, 0, 0.6);\n    border: 2px solid #ddd;\n    ", ";\n    background-color: white;\n    position: relative;\n    z-index: 1;\n  }\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    width: 100%;\n    height: 2px;\n    background-color: #ddd;\n    top: 15px;\n    left: -50%;\n    z-index: 0;\n  }\n\n  &:first-child:after {\n    content: \"\";\n    background-color: transparent;\n    height: 0;\n    width: 0;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -55,7 +55,8 @@ var Stepper = function Stepper(props) {
       currentStep = props.currentStep,
       fontFamily = props.fontFamily,
       textColor = props.textColor,
-      activeColor = props.activeColor;
+      activeColor = props.activeColor,
+      onItemClick = props.onItemClick;
   return React.createElement(Container, {
     fontFamily: fontFamily
   }, React.createElement(ProgressBar, null, steps && steps.map(function (step, index) {
@@ -64,7 +65,8 @@ var Stepper = function Stepper(props) {
       active: currentStep === index,
       completed: currentStep > index,
       textColor: textColor,
-      activeColor: activeColor
+      activeColor: activeColor,
+      onClick: onItemClick.bind(null, index, step)
     }, step);
   })));
 };
