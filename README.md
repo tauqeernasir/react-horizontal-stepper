@@ -36,6 +36,9 @@ render() {
       fontFamily="Roboto"
       textColor="#fff"
       activeColor="yellow"
+      onItemClick={(step, name) => {
+        console.log(`${step} has name '${name}'`)
+      }}
     />
   );
 }
